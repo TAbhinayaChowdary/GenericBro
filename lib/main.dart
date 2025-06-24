@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'generic_medicine_page.dart';
+import 'generic_pharmacy_locator.dart';
 
 void main() => runApp(GenericBroApp());
 
@@ -36,14 +37,12 @@ class HomePage extends StatelessWidget {
               ),
               SizedBox(height: 20),
               ElevatedButton(
-                onPressed: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text('Generic Pharmacy Locator - Coming Soon!'),
-                      duration: Duration(seconds: 2),
-                    ),
-                  );
-                },
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => GenericPharmacyLocatorPage(),
+                  ),
+                ),
                 child: Text('Generic Pharmacy Locator'),
               ),
             ],
